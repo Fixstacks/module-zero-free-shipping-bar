@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+    Copyright © 2026 Roman Pasichnyk
+    SPDX-License-Identifier: OSL-3.0 OR AFL-3.0
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <zero_free_shipping_bar>
+            <general>
+                <enabled>1</enabled>
+                <threshold>carrier</threshold>
+                <amount></amount>
+                <in_minicart>1</in_minicart>
+                <in_cart>1</in_cart>
+                <in_checkout>1</in_checkout>
+                <text_progress>Add %1 more for free shipping</text_progress>
+                <text_unlocked>You've unlocked free shipping!</text_unlocked>
+            </general>
+        </zero_free_shipping_bar>
+    </default>
+</config>

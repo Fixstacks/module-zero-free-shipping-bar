@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+    Copyright © 2026 Roman Pasichnyk
+    SPDX-License-Identifier: OSL-3.0 OR AFL-3.0
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="zero_free_shipping_bar" translate="label" type="text" sortOrder="48" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Free Shipping Bar</label>
+            <tab>zero</tab>
+            <resource>Zero_FreeShippingBar::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Free Shipping Bar</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <comment>"Add $12.50 more for free shipping" with a progress bar in the mini-cart, the cart and the checkout summary.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="threshold" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Threshold</label>
+                    <comment>The Free Shipping method's "Minimum Order Amount" (Sales > Delivery Methods), while that method is enabled; or an amount of your own, when free shipping comes from a cart rule or another carrier.</comment>
+                    <source_model>Zero\FreeShippingBar\Model\Config\Source\Threshold</source_model>
+                </field>
+                <field id="amount" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Own Amount</label>
+                    <comment>In the base currency, the cart subtotal after discounts. Empty or 0: the bar stays hidden.</comment>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                    <depends><field id="threshold">amount</field></depends>
+                </field>
+                <field id="in_minicart" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>In the Mini-Cart</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="in_cart" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>On the Cart Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="in_checkout" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>In the Checkout Summary</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="text_progress" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Text Before the Threshold</label>
+                    <comment>%1 is the amount still missing.</comment>
+                </field>
+                <field id="text_unlocked" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Text Once Reached</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

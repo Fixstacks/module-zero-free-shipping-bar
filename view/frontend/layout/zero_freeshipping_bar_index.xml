@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+    Copyright © 2026 Roman Pasichnyk
+    SPDX-License-Identifier: OSL-3.0 OR AFL-3.0
+
+    Response of Controller\Bar\Index.
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <body>
+        <block class="Magento\Framework\View\Element\Template" name="zero.free.shipping.bar" cacheable="false"
+               template="Zero_FreeShippingBar::bar.phtml">
+            <arguments>
+                <argument name="viewModel" xsi:type="object">Zero\FreeShippingBar\ViewModel\Bar</argument>
+            </arguments>
+        </block>
+    </body>
+</layout>

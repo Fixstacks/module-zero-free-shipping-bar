@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+    Copyright © 2026 Roman Pasichnyk
+    SPDX-License-Identifier: OSL-3.0 OR AFL-3.0
+
+    The bar at the top of the mini-cart content (the GET fragment and the
+    response of a qty change alike).
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <body>
+        <referenceBlock name="zero.checkout.minicart">
+            <block class="Magento\Framework\View\Element\Template" name="zero.free.shipping.minicart" as="zero.minicart.top"
+                   template="Zero_FreeShippingBar::bar.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Zero\FreeShippingBar\ViewModel\Bar</argument>
+                    <argument name="place" xsi:type="string">minicart</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</layout>
