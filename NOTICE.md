@@ -1,4 +1,4 @@
-# fixstacks/module-zero-free-shipping-bar — licensing
+# zerofront/module-zero-free-shipping-bar — licensing
 
 Copyright © 2026 Roman Pasichnyk.
 
